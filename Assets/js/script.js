@@ -1,13 +1,15 @@
+
+
 var qArray = [
     {
-        question: "QUESTION",
+        question: "Where was the first battle of World War II?",
         answers: {
-            a: 'XXXX',
-            b: 'XXXX',
-            c: 'XXXX',
-            d: 'XXXX'
+            a: 'Warsaw',
+            b: 'Denmark',
+            c: 'Westerplatte',
+            d: 'Copenhagen'
         },
-        correctAnswer: 'ANSWER'
+        correctAnswer: 'Westerplatte'
     },
     {
         question: "QUESTION",
