@@ -1,85 +1,101 @@
-
+var quizIntro = document.getElementById("quiz-intro");
+var timer = document.getElementById("timer");
+var question = document.getElementById("question");
+var answerChoices = document.getElementById("answer-choices");
+var submit = document.getElementById("submit");
+var judgement = document.getElementById("judgement");
+var userAnswer = document.getElementById("user-answer");
+var input = document.getElementById("input");
+var correctInput = document.getElementById("correct-input");
+// This is going to be a status, not a variable so to speak. It will be like "On 'correct-answer' run 'correct-input' process."
+var correctAnswer = document.getElementById("correct-answer");
+// Which means that this is a variable for each question where it is a static thing, independent of user input. The correct answer to every "first battle" question instance will be "Westerplatte", every time.
+var wrongInput = document.getElementById("wrong-input");
+var resultsBox = document.getElementById("results-box");
+var results = document.getElementById("results");
 
 var qArray = [
     {
-        question: "Where was the first battle of World War II?",
+        question: "Where was the first true battle of World War II?",
         answers: {
-            a: 'Warsaw',
-            b: 'Denmark',
-            c: 'Westerplatte',
-            d: 'Copenhagen'
+            a: 'The Westerplatte Peninsula, Gdańsk, Poland',
+            b: 'Warsaw, Poland',
+            c: 'Copenhagen, Denmark',
+            d: 'Sopot, Poland'
+
+
         },
-        correctAnswer: 'Westerplatte'
+        correctAnswer: 'The Westerplatte Peninsula, Gdańsk, Poland'
     },
     {
-        question: "QUESTION",
+        question: "Finish the sentence:  <br /> The Polish army at Westerplatte was only believed to be capable of lasting ________ hours.",
         answers: {
-            a: 'XXXX',
-            b: 'XXXX',
-            c: 'XXXX',
-            d: 'XXXX'
+            a: 'twenty-four',
+            b: 'twelve',
+            c: 'seven',
+            d: 'three'
         },
-        correctAnswer: 'ANSWER'
+        correctAnswer: 'seven'
     },
     {
-        question: "QUESTION",
+        question: "How long did the Polish soldiers hold Westerplatte before surrendering?",
         answers: {
-            a: 'XXXX',
-            b: 'XXXX',
-            c: 'XXXX',
-            d: 'XXXX'
+            a: 'Twenty-four hours',
+            b: 'Three days',
+            c: 'Seven hours',
+            d: 'Seven days'
         },
-        correctAnswer: 'ANSWER'
+        correctAnswer: 'Seven days'
     },
     {
-        question: "QUESTION",
+        question: "The Polish army surrendered Westerplatte to the German army due to what reason?",
         answers: {
-            a: 'XXXX',
-            b: 'XXXX',
-            c: 'XXXX',
-            d: 'XXXX'
+            a: 'Warsaw, the capital of Poland, had been surrounded.',
+            b: 'They had suffered severe casualties.',
+            c: 'A commander was secretly working for Germany.',
+            d: 'The ranking officer on the Peninsula had been captured.'
         },
-        correctAnswer: 'ANSWER'
+        correctAnswer: answers[a]
     },
     {
-        question: "QUESTION",
+        question: "Warsaw was known as _________ before World War II.",
         answers: {
-            a: 'XXXX',
-            b: 'XXXX',
-            c: 'XXXX',
-            d: 'XXXX'
+            a: 'the Shining City of the East',
+            b: 'the Rome of the North',
+            c: 'the Crown Jewel of Poland',
+            d: 'the Paris of the North'
         },
-        correctAnswer: 'ANSWER'
+        correctAnswer: 'the Paris of the North'
     },
     {
-        question: "QUESTION",
+        question: "Warsaw was under siege from 1939 until __________.",
         answers: {
-            a: 'XXXX',
-            b: 'XXXX',
-            c: 'XXXX',
-            d: 'XXXX'
+            a: '1942 (three years)',
+            b: '1945 (six years)',
+            c: '1940 (one year)',
+            d: '1943 (four years)'
         },
-        correctAnswer: 'ANSWER'
+        correctAnswer: '1945 (six years)'
     },
     {
-        question: "QUESTION",
+        question: "During the German occupation of Warsaw, over ___________ Polish citizens were killed in the city.",
         answers: {
-            a: 'XXXX',
-            b: 'XXXX',
-            c: 'XXXX',
-            d: 'XXXX'
+            a: '50,000',
+            b: '100,000',
+            c: '150,000',
+            d: '200,000'
         },
-        correctAnswer: 'ANSWER'
+        correctAnswer: '150,000'
     },
     {
-        question: "QUESTION",
+        question: "During the German occupation of Poland, the Polish Underground State were able to impliment which of the following in their secret resistance?",
         answers: {
-            a: 'XXXX',
-            b: 'XXXX',
-            c: 'XXXX',
-            d: 'XXXX'
+            a: 'Schooling for children.',
+            b: 'A postal service.',
+            c: 'A judicial system.',
+            d: 'All of the above.'
         },
-        correctAnswer: 'ANSWER'
+        correctAnswer: 'All of the above.'
     },
     {
         question: "QUESTION",

@@ -1,3 +1,22 @@
 * {
     font-family:monospace;
 }
+
+body {
+    margin: 0 auto;
+    background-color: darkslategrey;
+}
+
+p {
+    color: white;
+}
+
+h1 {
+    text-transform: uppercase;
+    color: lightgray;
+
+}
+
+h2 {
+    color: lightslategrey;
+}
